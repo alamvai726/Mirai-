@@ -6,7 +6,7 @@ const totp = require("totp-generator");
 let configPath = "";
 let argv = process.argv.slice(2);
 if (argv.length !== 0) configPath = argv[0];
-else configPath = "./config.json";
+else configPath = "./Jubayer.json";
 
 var rl = readline.createInterface({
 	input: process.stdin,
