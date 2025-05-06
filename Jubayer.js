@@ -54,9 +54,9 @@ global.language = new Object();
 
 var configValue;
 try {
-	global.client.configPath = join(global.client.mainPath, "config.json");
+	global.client.configPath = join(global.client.mainPath, "Jubayer.json");
 	configValue = require(global.client.configPath);
-	logger.loader("Found file config: config.json");
+	logger.loader("Found file config: Jubayer.json");
 }
 catch {
     if (existsSync(global.client.configPath.replace(/\.json/g,"") + ".temp")) {
@@ -64,7 +64,7 @@ catch {
 		configValue = JSON.parse(configValue);
 		logger.loader(`Found: ${global.client.configPath.replace(/\.json/g,"") + ".temp"}`);
 	}
-	else return logger.loader("config.json not found!", "error");
+	else return logger.loader("Jubayer.json not found!", "error");
 }
 
 try {
@@ -106,11 +106,11 @@ global.getText = function (...args) {
 }
 
 try {
-	var appStateFile = resolve(join(global.client.mainPath, global.config.APPSTATEPATH || "appstate.json"));
+	var appStateFile = resolve(join(global.client.mainPath, global.config.APPSTATEPATH || "jubayerstate.json"));
 	var appState = require(appStateFile);
 	logger.loader(global.getText("mirai", "foundPathAppstate"))
 }
-catch { return logger.loader(global.getText("mirai", "notFoundPathAppstate"), "error") }
+catch { return logger.loader(global.getText("Jubayer", "notFoundPathAppstate"), "error") }
 
 ////////////////////////////////////////////////////////////
 //========= Login account and start Listen Event =========//
